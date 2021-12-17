@@ -1,0 +1,41 @@
+mixins pokemonCard(pokemon)
+
+    div.card-container
+        div.container
+            div.add-button-row
+                a.button.save(href="/random") Random Pokemon
+            div.add-button-row
+                a.button.save(href="/add") Add Pokemon
+
+            div.edit
+                a(href=`/edit/${pokemon.id}`) Edit
+            div.delete
+                a(href=`/edit/${pokemon.id}`) Delete
+            div.card
+                div.header
+                    div.name=pokemon.name
+                    div.hp=pokemon.hp
+                    div.type
+                        img(src=pokemon.type)
+                div.pokemon-pic
+                    img(src = pokemon.picture class='pokemon')
+                div.moves
+                    div.move1
+                        div.cost
+                            img(src = pokemon.move1cost)
+                        div.move-name=pokemon.move1name
+                        div.move-power=pokemon.move1power
+                    div.move2
+                        div.cost
+                            img(src = pokemon.move2cost1)
+                            img(src = pokemon.move2cost2)
+                            img(src = pokemon.move2cost3)
+                        div.move-name=pokemon.move2name
+                        div.move-power=pokemon.move2power
+                div.info
+                    div.weakness='weakness'
+                    img(src = pokemon.weakness)
+                    div.resistance='resistance'
+                    img(src = pokemon.resistance)
+                    div.retreat-cost='retreat cost'
+                    img(src = pokemon.retreatcost)

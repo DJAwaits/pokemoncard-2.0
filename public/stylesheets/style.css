@@ -1,0 +1,59 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+}
+
+a {
+  color: #00B7FF;
+}
+.card {
+
+  background-color: slategray;
+  width: 400px;
+  length: 400px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.card-container{
+  display: flex;
+  padding: 48px;
+  gap: 8px;
+  flex-wrap: wrap;
+
+
+}
+img {
+  width: 100px;
+  length: 100px;
+}
+.moves{
+  border-bottom: 2px solid black;
+
+}
+.move1 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+}
+.move2 {
+  display: flex;
+  justify-content: space-between;
+}
+.pokemon-pic {
+  display: flex;
+
+
+}
+.info {
+  display: flex;
+}
+.pokemon {
+  width: 200px;
+  length: 200px;
+  padding-left: 100px;
+  padding-right: 100px;
+}

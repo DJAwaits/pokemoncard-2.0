@@ -1,0 +1,5 @@
+extends layout
+
+block content
+    include mixins/pokemonForm
+    +pokemonForm(pokemons, `/add`, 'add', 'Add Pokemon')

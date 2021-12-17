@@ -1,0 +1,55 @@
+mixin pokemonForm(pokemons, actionURL, mode, title)
+
+    div.form-panel
+        div.header= title
+            form(action=actionURL method='post')
+                div.form-input
+                    label(for='name') Name:
+                    input(type='text' id='name' name='name' value=pokemons.name)
+                div.form-input
+                    label(for='hp') Hp:
+                    input(type='text' id='hp' name='hp' value=pokemons.hp)
+                div.form-input
+                    label(for='type') Type:
+                    input(type='text' id='type' name='type' value=pokemons.type)
+                div.form-input
+                    label(for='picture') Picture:
+                    input(type='text' id='picture' name='picture' value=pokemons.picture)
+                div.form-input
+                    label(for='move1cost') Move1cost:
+                    input(type='text' id='move1cost' name='move1cost' value=pokemons.move1cost)
+                div.form-input
+                    label(for='move1name') Move1name:
+                    input(type='text' id='move1name' name='move1name' value=pokemons.move1name)
+                div.form-input
+                    label(for='move1power') Move1power:
+                    input(type='text' id='move1power' name='move1power' value=pokemons.move1power)
+                div.form-input
+                    label(for='move2cost1') Move2cost1:
+                    input(type='text' id='move2cost1' name='move2cost1' value=pokemons.move2cost1)
+                div.form-input
+                    label(for='move2cost2') Move2cost2:
+                    input(type='text' id='move2cost2' name='move2cost2' value=pokemons.move2cost2)
+                div.form-input
+                    label(for='move2cost3') Move2cost3:
+                    input(type='text' id='move2cost3' name='move2cost3' value=pokemons.move2cost3)
+                div.form-input
+                    label(for='move2name') Move2name:
+                    input(type='text' id='move2name' name='move2name' value=pokemons.move2name)
+                div.form-input
+                    label(for='move2power') Move2power:
+                    input(type='text' id='move2power' name='move2power' value=pokemons.move2power)
+                div.form-input
+                    label(for='weakness') Weakness:
+                    input(type='text' id='weakness' name='weakness' value=pokemons.weakness)
+                div.form-input
+                    label(for='resistance') Resistance:
+                    input(type='text' id='resistance' name='resistance' value=pokemons.resistance)
+                div.form-input
+                    label(for='retreatcost') Retreatcost:
+                    input(type='text' id='retreatcost' name='retreatcost' value=pokemons.retreatcost)
+                div.button-row
+                    a.button.cancel(href='/') Cancel
+                    if (mode==='edit')
+                        a.button.delete(href=`/delete/${pokemons.id}`) Delete
+                    button.button.save(type='submit') Submit

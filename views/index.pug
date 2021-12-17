@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  div.card-container
+    form(action='/' method='get')
+      div.form-input
+        label(for='categorey') Category
+        select(id='categorey' name= 'categorey' autocomplete='off')
+          each categorey in categories
+            option(value=categorey selected =(categorey === searchCategorey)) #{categorey}
+        div.form-input
+          label(for='random') Random
+          input(type='checkbox' name='random' id='random' checked=searchRandom)
+      button.button.save(type='submit') Filter
+
+  div.card-container
+    div.container
+
+      div.add-button-row
+        a.button.save(href="/add") Add Pokemon
+    each pokemon in pokemons
+
+      div.edit
+        a(href=`/edit/${pokemon.id}`) Edit
+      div.delete
+        a(href=`/delete/${pokemon.id}`) Delete
+      div.card
+        div.header
+          div.name=pokemon.name
+          div.pokemon-hp=pokemon.hp
+          div.type
+            img(src = pokemon.type)
+        div.pokemon-pic
+          img(src = pokemon.picture class='pokemon')
+        div.moves
+          div.move1
+            div.cost
+              img(src = pokemon.move1cost)
+            div.move-name=pokemon.move1name
+            div.move-power=pokemon.move1power
+          div.move2
+            div.cost
+              img(src = pokemon.move2cost1)
+              img(src = pokemon.move2cost2)
+              img(src = pokemon.move2cost3)
+            div.move-name=pokemon.move2name
+            div.move-power=pokemon.move2power
+        div.info
+          div.weakness='weakness'
+            img(src = pokemon.weakness)
+          div.resistance='resistance'
+            img(src = pokemon.resistance)
+          div.retreat-cost='retreat cost'
+            img(src = pokemon.retreatcost)
