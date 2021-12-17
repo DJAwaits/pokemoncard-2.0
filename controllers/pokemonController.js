@@ -7,7 +7,6 @@ module.exports.pokemonCard =  async function(req, res,) {
     }
     let pokemons;
     let searchCategory = req.query.type || 'All';
-    let searchRandom = req.query.random || false;
     if (searchCategory==='All'){
         pokemons = await Pokemon.findAll();
     } else {
@@ -17,14 +16,9 @@ module.exports.pokemonCard =  async function(req, res,) {
             }
         });
     }
-    if (pokemons.length > 0 && searchRandom) {
-        let randomIndex = getRandomInt(pokemons.length);
-        pokemons = [pokemons[randomIndex]];
-    }
 
 
-
-    res.render('index', {pokemons, categories : searchCategories, searchCategory,});
+    res.render('index', {pokemons, categories : searchCategories, searchCategory});
 };
 
 module.exports.renderEditForm = async function(req,res,next) {
